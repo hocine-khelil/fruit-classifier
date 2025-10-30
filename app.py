@@ -13,9 +13,10 @@ MODEL_PATH = "fruit_cnn_model_augmented.h5"
 
 # تحميل النموذج تلقائيًا من Google Drive عند التشغيل
 if not os.path.exists(MODEL_PATH):
-    file_id = "1AbCdEfGhijkLMNOP"  # 🔹 استبدل هذا بالـ File ID الخاص بك
-    url = f"https://drive.google.com/uc?id={file_id}"
+    # ضع رابط Google Drive بصيغة مباشرة
+    url = "https://drive.google.com/file/d/1y56oepTHWehdno9r6r6f6s9IBN0AvxkT/view?usp=sharing"
     gdown.download(url, MODEL_PATH, quiet=False)
+
 
 # تحميل النموذج
 model = tf.keras.models.load_model(MODEL_PATH)
@@ -63,5 +64,6 @@ if uploaded_file is not None:
     ax.set_ylabel("نسبة الثقة")
     ax.set_ylim([0, 1])
     st.pyplot(fig)
+
 
 

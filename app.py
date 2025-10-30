@@ -10,13 +10,12 @@ from PIL import Image
 import gdown
 
 # تحميل النموذج تلقائيًا من Google Drive عند التشغيل
-MODEL_URL = "https://drive.google.com/file/d/1RSrhXscoGX4rstSrJdcGDxsBD6trJ9to/view?usp=sharing"  # ← ضع هنا ID من رابطك
-MODEL_PATH = "fruit_sequential_model.h5"
-import os
-
 if not os.path.exists(MODEL_PATH):
-    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+    file_id = "1AbCdEfGhijkLMNOP"  # 🔹 استبدل هذا بالـ File ID الخاص بك
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, MODEL_PATH, quiet=False)
 
+# تحميل النموذج
 model = tf.keras.models.load_model(MODEL_PATH)
 
 

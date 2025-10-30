@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
+import os
 from PIL import Image
 
 # تحميل النموذج
@@ -61,3 +62,4 @@ if uploaded_file is not None:
     ax.set_ylabel("نسبة الثقة")
     ax.set_ylim([0, 1])
     st.pyplot(fig)
+

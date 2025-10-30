@@ -9,6 +9,7 @@ from PIL import Image
 
 
 import gdown
+MODEL_PATH = "fruit_cnn_model_augmented.h5"
 
 # تحميل النموذج تلقائيًا من Google Drive عند التشغيل
 if not os.path.exists(MODEL_PATH):
@@ -62,4 +63,5 @@ if uploaded_file is not None:
     ax.set_ylabel("نسبة الثقة")
     ax.set_ylim([0, 1])
     st.pyplot(fig)
+
 
